@@ -1,0 +1,9 @@
+* {
+    box-sizing: border-box;
+}
+
+.slider {
+    background: red;
+    height: 20px;
+    width: 30%;
+}
