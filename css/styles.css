@@ -21,6 +21,7 @@
 .pixel {
     border: 1px solid black;
     flex: 1;
+    user-select: none;
 }
 
 .slider {
