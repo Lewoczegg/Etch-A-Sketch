@@ -4,10 +4,10 @@
 }
 
 body {
-    background: #e6a83e;
+    background: #f7c654;
 }
 
-h1, p {
+h1, p, li {
     color:#471b6b;
 }
 
@@ -22,9 +22,9 @@ ul {
 
 section {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: flex-start;
-    gap: 150px;
+    gap: 100px;
     max-width: 1400px;
     margin: 0 auto;
 }
@@ -34,7 +34,6 @@ section {
     width: 700px;
     height: 700px;
     margin: auto;
-    border-left: 50px solid #db0707;
     border: 30px solid #db0707;
     border-radius: 25px;
     display: flex;
@@ -68,10 +67,25 @@ section {
 
 /* Tools */
 .tools {
-    width: 200px;
+    width: 250px;
+    font-size: 30px;
+    text-align: left;
+}
+
+.tool {
+    margin: 20px 0;
+    text-align: left;
+    padding: 10px;
+    border: 1px solid #471b6b;
+    border-radius: 5px;
 }
 
 .tool-img {
-    width: 30px;
+    width: 50px;
+    padding-right: 15px;
+}
+
+.active {
+    border: 5px solid #db0707;
 }
 
