@@ -6,7 +6,7 @@ let container = document.querySelector('.container');
 
 
 let sliderValue = document.querySelector('#slider-value');
-const showNumber = () => {
+function showNumber() {
     sliderValue.textContent = slider.value;
 }
 

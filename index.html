@@ -9,9 +9,17 @@
 </head>
 <body>
     <h1>Etch A Sketch</h1>
-    <div class="container"></div>
-    <input type="range" min="10" max="64" value="16" class="slider">
-    <p>Value: <span id="slider-value"></span></p>
+    <section>
+        <ul class="tools">
+            <li><img class="tool-img" src="img/pencil.png" alt="An icon of pencil"> Pencil</li>
+            <li><img class="tool-img" src="img/eraser.png" alt="An image of rubber"> Rubber</li>
+        </ul>
+        <div class="right">
+            <div class="container"></div>
+            <input type="range" min="10" max="64" value="16" class="slider">
+            <p class="value">Value: <span id="slider-value"></span></p>
+        </div>
+    </section>
     <script src="js/index.js"></script>
 </body>
 </html>
