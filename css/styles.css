@@ -47,9 +47,12 @@ section {
 }
 
 .pixel {
-    border: 1px solid black;
     flex: 1;
     user-select: none;
+}
+
+.border {
+    border: 1px solid black;
 }
 
 /* Slider */
@@ -72,7 +75,7 @@ section {
     text-align: left;
 }
 
-.tool {
+.tool, .toggle-grid {
     margin: 20px 0;
     text-align: left;
     padding: 10px;
@@ -83,6 +86,10 @@ section {
 .tool-img {
     width: 50px;
     padding-right: 15px;
+}
+
+.toggle-grid {
+    padding-left: 25px;
 }
 
 .active {

@@ -3,6 +3,7 @@ document.body.onmousedown = () => (mouseDown = true);
 document.body.onmouseup = () => (mouseDown = false);
 
 let currentMode = 'pencil';
+let gridMode = true;
 
 let container = document.querySelector('.container');
 let slider = document.querySelector('.slider');
@@ -14,16 +15,16 @@ function showNumber() {
     sliderValue.textContent = slider.value;
 }
 
-function changeGrid() {
-    if(!mouseDown) return;
-    showNumber();
-    deleteContainerChilds();
+function makeGrid() {
     for(let i = 0; i < slider.value; i++) {
         const line = document.createElement('div');
         line.classList.add('line');
         for(j = 0; j < slider.value; j++) {
             const pixel = document.createElement('div');
             pixel.classList.add('pixel');
+            if(gridMode) {
+                pixel.classList.add('border');
+            }
             pixel.setAttribute('style', 'background: white');
             pixel.addEventListener('mouseover', changeBackground);
             pixel.addEventListener('mousedown', changeBackground);
@@ -31,6 +32,13 @@ function changeGrid() {
         }
         container.appendChild(line);
     }
+}
+
+function changeGrid() {
+    if(!mouseDown) return;
+    showNumber();
+    deleteContainerChilds();
+    makeGrid();
 }
 
 function deleteContainerChilds() {
@@ -69,21 +77,26 @@ function toggleActiveMode() {
     console.log(currentMode);
 }
 
+let gridButton = document.querySelector('.toggle-grid');
+gridButton.addEventListener('click', toggleGridMode);
+
+function toggleGridMode() {
+    const pixels = document.querySelectorAll('.pixel');
+    if (this.classList.contains('active')) {
+        this.classList.remove('active');
+        pixels.forEach(pixel => pixel.classList.remove('border'));
+        gridMode = false;
+    } else {
+        this.classList.add('active');
+        pixels.forEach(pixel => pixel.classList.add('border'));
+        gridMode = true;
+    }
+}
+
+
 function init() {
     sliderValue.textContent = 16;
-    for(let i = 0; i < slider.value; i++) {
-        const line = document.createElement('div');
-        line.classList.add('line');
-        for(j = 0; j < slider.value; j++) {
-            const pixel = document.createElement('div');
-            pixel.classList.add('pixel');
-            pixel.setAttribute('style', 'background: white');
-            pixel.addEventListener('mouseover', changeBackground);
-            pixel.addEventListener('mousedown', changeBackground);
-            line.appendChild(pixel);
-        }
-        container.appendChild(line);
-    }
+    makeGrid();
 }
 
 init();
