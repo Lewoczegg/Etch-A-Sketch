@@ -39,6 +39,7 @@ section {
     display: flex;
     flex-direction: column;
     margin-bottom: 15px;
+    cursor: url('../img/pencil-cursor.png') 0 32, auto;
 }
 
 .line {
@@ -80,7 +81,13 @@ section {
     text-align: left;
     padding: 10px;
     border: 1px solid #471b6b;
-    border-radius: 5px;
+    border-radius: 10px;
+}
+
+.tool:hover, .toggle-grid:hover {
+    transform: scale(1.1);
+    transition: all 0.5s;
+    cursor: pointer;
 }
 
 .tool-img {

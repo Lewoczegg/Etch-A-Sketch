@@ -74,7 +74,11 @@ function toggleActiveMode() {
     tools.forEach(tool => tool.classList.remove('active'));
     this.classList.add('active');
     currentMode = this.innerText.toLowerCase();
-    console.log(currentMode);
+    if(currentMode === 'pencil') {
+        container.setAttribute('style', `cursor: url('../img/pencil-cursor.png') 0 32, auto;`)
+    } else if (currentMode === 'rubber') {
+        container.setAttribute('style', `cursor: url('../img/eraser-cursor.png') 8 30, auto;`)
+    }
 }
 
 let gridButton = document.querySelector('.toggle-grid');
